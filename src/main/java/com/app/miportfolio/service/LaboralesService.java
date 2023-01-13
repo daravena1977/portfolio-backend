@@ -27,17 +27,17 @@ public class LaboralesService implements ILaboralesService {
 
     @Override
     public void borrarLaborales(Long id) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        laborRepo.deleteById(id);
     }
 
     @Override
     public Laborales burcasLaborales(Long id) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return laborRepo.findById(id).orElse(null);
     }
 
     @Override
     public void editarLaborales(Laborales labor) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        laborRepo.save(labor);
     }
     
 }

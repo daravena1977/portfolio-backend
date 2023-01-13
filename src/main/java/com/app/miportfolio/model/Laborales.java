@@ -1,9 +1,12 @@
 package com.app.miportfolio.model;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 import java.text.SimpleDateFormat;
@@ -26,16 +29,20 @@ public class Laborales {
     private String funciones;
     
     @Temporal(TemporalType.DATE)
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date fechaDesde;
-    private String fechaHasta;
+    private Date fechaHasta;
+    
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name ="id_persona")
+    
+    private Persona persona;
     
     public Laborales (){
         
         
     }
 
-    public Laborales(Long id, String logo, String nombreEmpresa, String cargo, String funciones, Date fechaDesde, String fechaHasta) {
+    public Laborales(Long id, String logo, String nombreEmpresa, String cargo, String funciones, Date fechaDesde, Date fechaHasta) {
         this.id = id;
         this.logo = logo;
         this.nombreEmpresa = nombreEmpresa;

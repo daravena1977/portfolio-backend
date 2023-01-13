@@ -1,9 +1,13 @@
 package com.app.miportfolio.model;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+import java.util.List;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -19,17 +23,22 @@ public class Persona {
     private String acercaDeMi;
     private String cargo;
     
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "persona", cascade = CascadeType.ALL)
+    private List<Laborales> listaLaborales;
+    
     public Persona(){
         
     }
-    
-    public Persona(Long id, String nombre, String apellido, String acercaDeMi){
-        
+
+    public Persona(Long id, String nombre, String apellido, String acercaDeMi, String cargo, List<Laborales> listaLaborales) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
         this.acercaDeMi = acercaDeMi;
-        
+        this.cargo = cargo;
+        this.listaLaborales = listaLaborales;
     }
+    
+    
     
 }

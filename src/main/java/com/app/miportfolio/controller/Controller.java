@@ -2,7 +2,6 @@ package com.app.miportfolio.controller;
 
 import com.app.miportfolio.model.Persona;
 import com.app.miportfolio.service.IPersonaService;
-import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
