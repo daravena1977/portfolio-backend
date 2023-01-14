@@ -34,7 +34,6 @@ public class Laborales {
     
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name ="id_persona")
-    
     private Persona persona;
     
     public Laborales (){

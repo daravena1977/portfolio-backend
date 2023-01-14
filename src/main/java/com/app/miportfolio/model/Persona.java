@@ -26,17 +26,23 @@ public class Persona {
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "persona", cascade = CascadeType.ALL)
     private List<Laborales> listaLaborales;
     
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "persona", cascade = CascadeType.ALL)
+    private List<Educacion> listaEducacion;
+    
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "persona", cascade = CascadeType.ALL)
+    private List<Habilidad> listaHabilidades;
+    
     public Persona(){
         
     }
 
-    public Persona(Long id, String nombre, String apellido, String acercaDeMi, String cargo, List<Laborales> listaLaborales) {
+    public Persona(Long id, String nombre, String apellido, String acercaDeMi, String cargo) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
         this.acercaDeMi = acercaDeMi;
         this.cargo = cargo;
-        this.listaLaborales = listaLaborales;
+        
     }
     
     
