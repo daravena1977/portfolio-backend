@@ -38,7 +38,7 @@ public class Educacion {
         
     }
 
-    public Educacion(Long id, String logoInstitucion, String nombreInstitucion, String nombreCurso, String estadoCurso, Date fechaDesde, Date fechaHasta) {
+    public Educacion(Long id, String logoInstitucion, String nombreInstitucion, String nombreCurso, String estadoCurso, Date fechaDesde, Date fechaHasta, Persona persona) {
         this.id = id;
         this.logoInstitucion = logoInstitucion;
         this.nombreInstitucion = nombreInstitucion;
@@ -46,8 +46,10 @@ public class Educacion {
         this.estadoCurso = estadoCurso;
         this.fechaDesde = fechaDesde;
         this.fechaHasta = fechaHasta;
+        this.persona = persona;
     }
-    
+
+       
     
     
     
