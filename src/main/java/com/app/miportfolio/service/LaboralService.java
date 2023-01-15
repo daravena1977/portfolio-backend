@@ -1,42 +1,42 @@
 package com.app.miportfolio.service;
 
-import com.app.miportfolio.model.Laborales;
-import com.app.miportfolio.repository.LaboralesRepository;
+import com.app.miportfolio.model.Laboral;
 import java.util.Date;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import com.app.miportfolio.repository.LaboralRepository;
 
 
 @Service
-public class LaboralesService implements ILaboralesService {
+public class LaboralService implements ILaboralService {
 
     @Autowired
-    public LaboralesRepository laborRepo;
+    public LaboralRepository laborRepo;
     
     @Override
-    public List<Laborales> verLaborales() {
+    public List<Laboral> verLaborales() {
         return laborRepo.findAll();
     }
 
     @Override
-    public void crearLaborales(Laborales labor) {
+    public void crearLaboral(Laboral labor) {
         laborRepo.save(labor);
         
     }
 
     @Override
-    public void borrarLaborales(Long id) {
+    public void borrarLaboral(Long id) {
         laborRepo.deleteById(id);
     }
 
     @Override
-    public Laborales burcasLaborales(Long id) {
+    public Laboral burcasLaboral(Long id) {
         return laborRepo.findById(id).orElse(null);
     }
 
     @Override
-    public void editarLaborales(Laborales labor) {
+    public void editarLaboral(Laboral labor) {
         laborRepo.save(labor);
     }
     

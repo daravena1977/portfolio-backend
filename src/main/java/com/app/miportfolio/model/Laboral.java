@@ -18,7 +18,7 @@ import org.springframework.format.annotation.DateTimeFormat.ISO;
 
 @Getter @Setter
 @Entity
-public class Laborales {
+public class Laboral {
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -36,12 +36,12 @@ public class Laborales {
     @JoinColumn(name ="id_persona")
     private Persona persona;
     
-    public Laborales (){
+    public Laboral (){
         
         
     }
 
-    public Laborales(Long id, String logo, String nombreEmpresa, String cargo, String funciones, Date fechaDesde, Date fechaHasta) {
+    public Laboral(Long id, String logo, String nombreEmpresa, String cargo, String funciones, Date fechaDesde, Date fechaHasta, Persona persona) {
         this.id = id;
         this.logo = logo;
         this.nombreEmpresa = nombreEmpresa;
@@ -49,7 +49,10 @@ public class Laborales {
         this.funciones = funciones;
         this.fechaDesde = fechaDesde;
         this.fechaHasta = fechaHasta;
+        this.persona = persona;
     }
+
+    
     
     public String formatearDesde(){
         SimpleDateFormat sdf=new SimpleDateFormat("dd/MM/yyyy");

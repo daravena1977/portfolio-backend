@@ -24,7 +24,7 @@ public class Persona {
     private String cargo;
     
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "persona", cascade = CascadeType.ALL)
-    private List<Laborales> listaLaborales;
+    private List<Laboral> listaLaborales;
     
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "persona", cascade = CascadeType.ALL)
     private List<Educacion> listaEducacion;

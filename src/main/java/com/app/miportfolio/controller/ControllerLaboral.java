@@ -1,7 +1,6 @@
 package com.app.miportfolio.controller;
 
-import com.app.miportfolio.model.Laborales;
-import com.app.miportfolio.service.ILaboralesService;
+import com.app.miportfolio.model.Laboral;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -12,39 +11,40 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import com.app.miportfolio.service.ILaboralService;
 
 @RestController
-public class ControllerLaborales {
+public class ControllerLaboral {
     
     @Autowired
     
-    private ILaboralesService laborServ;
+    private ILaboralService laborServ;
     
     @PostMapping ("/new/laborales")
-    public void crearLaborales (@RequestBody Laborales labor){
-        laborServ.crearLaborales(labor);
+    public void crearLaborales (@RequestBody Laboral labor){
+        laborServ.crearLaboral(labor);
     }
     
     @GetMapping ("/ver/laborales")
     @ResponseBody
-    public List<Laborales> verLaborales(){
+    public List<Laboral> verLaborales(){
         return laborServ.verLaborales();
     }
     
     @DeleteMapping ("/delete/laborales/{id}")
     public void borrarLaborales(@PathVariable Long id){
-        laborServ.borrarLaborales(id);
+        laborServ.borrarLaboral(id);
     }
     
     @GetMapping ("/buscar/laborales/{id}")
     @ResponseBody
-    public Laborales buscarLaborales (@PathVariable Long id){
-        return laborServ.burcasLaborales(id);
+    public Laboral buscarLaborales (@PathVariable Long id){
+        return laborServ.burcasLaboral(id);
     }
     
     @PutMapping ("/editar/laborales")
-    public void editarLaborales(@RequestBody Laborales labor){
-        laborServ.editarLaborales(labor);
+    public void editarLaborales(@RequestBody Laboral labor){
+        laborServ.editarLaboral(labor);
     }
     
     
