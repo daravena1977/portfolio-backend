@@ -24,7 +24,7 @@ public class Controller {
         persoServ.crearPersona(pers);
     }
     
-    @GetMapping ("/ver/personas")
+    @GetMapping ("/api/auth/ver/personas")
     @ResponseBody
     public List<Persona> verPersonas() {
         return persoServ.verPersonas();
