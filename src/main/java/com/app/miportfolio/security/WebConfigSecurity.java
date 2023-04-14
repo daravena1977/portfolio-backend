@@ -65,6 +65,10 @@ public class WebConfigSecurity {
             .authorizeHttpRequests().requestMatchers("/api/auth/**").permitAll()
             .requestMatchers("/api/test/**").permitAll()
             .requestMatchers("/api/persona/**").permitAll()
+            .requestMatchers("/api/laborales/**").permitAll()
+            .requestMatchers("/api/educacion/**").permitAll()
+            .requestMatchers("/api/habilidades/**").permitAll()
+            .requestMatchers("/api/proyectos/**").permitAll()
             .anyRequest().authenticated();
     
         http.authenticationProvider(authenticationProvider());
