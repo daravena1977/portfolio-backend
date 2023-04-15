@@ -30,6 +30,13 @@ public class ControllerPersona {
         persoServ.crearPersona(pers);
     }
     
+    @GetMapping ("/buscar-persona/{id}")
+    @PreAuthorize("hasRole('USER') or hasRole('MODERATOR') or hasRole('ADMIN')")
+    public void buscarPersona (@PathVariable Long id) {
+        persoServ.buscarPersona(id);
+    }
+    
+    
     @GetMapping ("/lista-personas")
     @ResponseBody
     @PreAuthorize("hasRole('USER') or hasRole('MODERATOR') or hasRole('ADMIN')")
