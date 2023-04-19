@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-@CrossOrigin(origins = "*", maxAge = 3600)
+@CrossOrigin(origins = "http://localhost:4200/", maxAge = 3600, allowCredentials = "true")
 @RestController
 @RequestMapping("/api/persona")
 public class ControllerPersona {
@@ -32,8 +32,8 @@ public class ControllerPersona {
     
     @GetMapping ("/buscar-persona/{id}")
     @PreAuthorize("hasRole('USER') or hasRole('MODERATOR') or hasRole('ADMIN')")
-    public void buscarPersona (@PathVariable Long id) {
-        persoServ.buscarPersona(id);
+    public Persona buscarPersona (@PathVariable Long id) {
+       return persoServ.buscarPersona(id);
     }
     
     

@@ -3,7 +3,6 @@ package com.app.miportfolio.service;
 import com.app.miportfolio.model.Persona;
 import com.app.miportfolio.repository.PersonaRepository;
 import java.util.List;
-import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
